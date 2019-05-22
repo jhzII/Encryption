@@ -34,10 +34,11 @@ namespace Encryption.BL.Model {
 			string result = "";
 			foreach(char ch in message) {
 				int index = getIndexInAlphabet(ch);
-				if(index == -1)
-					result += ch;
-				else
-					result += alphabet[alphabet.Length - index - 1];
+				result += (index == -1) ? ch : alphabet[alphabet.Length - index - 1];
+				//if(index == -1)
+				//	result += ch;
+				//else
+				//	result += alphabet[alphabet.Length - index - 1];
 			}
 			return result;
 		}
